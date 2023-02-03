@@ -1,6 +1,7 @@
 import "tailwindcss/tailwind.css";
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
+import { useFlags, withLDProvider } from "launchdarkly-react-client-sdk";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -10,4 +11,6 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default withLDProvider({
+  clientSideID: "63dc71021ceae813c82fc7c3",
+})(MyApp);

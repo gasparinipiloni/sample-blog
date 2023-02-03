@@ -8,6 +8,7 @@
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.2",
     "@heroicons/react": "^1.0.5",
+    "launchdarkly-react-client-sdk": "^3.0.1",
     "next": "latest",
     "next-themes": "^0.0.15",
     "react": "^17.0.2",
