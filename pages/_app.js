@@ -1,7 +1,7 @@
 import "tailwindcss/tailwind.css";
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
-import { useFlags, withLDProvider } from "launchdarkly-react-client-sdk";
+import { withLDProvider } from "launchdarkly-react-client-sdk";
 
 function MyApp({ Component, pageProps }) {
   return (
