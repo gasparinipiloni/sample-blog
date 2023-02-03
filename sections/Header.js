@@ -2,6 +2,7 @@ import Logo from "../components/Logo";
 import {useTheme} from "next-themes";
 import{SunIcon ,MoonIcon} from "@heroicons/react/solid";
 import {useState, useEffect} from "react";
+import { withLDConsumer } from "launchdarkly-react-client-sdk";
 
 const Header = () => {
 
@@ -12,22 +13,22 @@ const Header = () => {
     setMounted(true);
   },[])
 
-   const renderThemeChanger= () => {
+   const renderThemeChanger= ({ flags }) => {
       if(!mounted) return null;
 
       const currentTheme = theme === "system" ? systemTheme : theme ;
 
-      // if(currentTheme ==="dark"){
-      //   return (
-      //     <SunIcon className="w-10 h-10 text-yellow-500 " role="button" onClick={() => setTheme('light')} />
-      //   )
-      // }
+      if(currentTheme ==="dark"){
+        return (
+          <SunIcon className="w-10 h-10 text-yellow-500 " role="button" onClick={() => setTheme('light')} />
+        )
+      }
 
-      // else {
-      //   return (
-      //     <MoonIcon className="w-10 h-10 text-gray-900 " role="button" onClick={() => setTheme('dark')} />
-      //   )
-      // }
+      else {
+        return (
+          <MoonIcon className="w-10 h-10 text-gray-900 " role="button" onClick={() => setTheme('dark')} />
+        )
+      }
    };
 
   return (
@@ -42,5 +43,5 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withLDConsumer()(Header);
 
