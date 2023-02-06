@@ -13,7 +13,7 @@ const Header = () => {
     setMounted(true);
   },[])
 
-  console.log("flags: " + flags.testePedro);
+  // console.log("flags: " + flags);
   const renderThemeChanger = ({ flags }) => {
 
     if(!mounted) return null;
@@ -46,4 +46,3 @@ const Header = () => {
 };
 
 export default withLDConsumer()(Header);
-
