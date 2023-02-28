@@ -47,3 +47,5 @@ Se você estiver utilizando o plano de serviço gratuito, provavelmente irá rec
 - Selecione `Owner` no campo `Role`
 - Na aba `Members`, selecione o seu usuário clicando em `Select members`
 - Clique em `Review + assign`
+
+Tentativa 2
